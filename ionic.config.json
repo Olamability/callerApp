@@ -1,5 +1,7 @@
 {
   "name": "beetleTaxisNewApp",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }

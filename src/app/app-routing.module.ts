@@ -5,6 +5,10 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+  },
+  {
+    path: 'verify-otp',
+    loadChildren: () => import('./pages/verify-otp/verify-otp.module').then( m => m.VerifyOtpPageModule)
   }
 ];
 @NgModule({

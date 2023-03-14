@@ -1,0 +1,16 @@
+ion-card {
+    ion-card-header {
+
+        .top,
+        .mid,
+        .cent,
+        .back {
+            display: flex;
+            justify-content: space-around;
+            ion-button{
+                font-size: 26px;
+            }
+
+        }
+    }
+}

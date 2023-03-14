@@ -1,17 +1,56 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
+    <ion-title >
       Tab 1
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
+  <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title >{{screenTest}}</ion-card-title>
+    </ion-card-header>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <div class="top">
+        <ion-button shape="round" (click)="buttonText(1)">1</ion-button>
+        <ion-button shape="round" (click)="buttonText(2)">2</ion-button>
+        <ion-button shape="round" (click)="buttonText(3)">3</ion-button>
+      </div>
+      <div class="mid">
+        <ion-button shape="round" (click)="buttonText(4)">4</ion-button>
+        <ion-button shape="round" (click)="buttonText(5)">5</ion-button>
+        <ion-button shape="round" (click)="buttonText(6)">6</ion-button>
+      </div>
+      <div class="cent">
+        <ion-button shape="round" (click)="buttonText(7)">7</ion-button>
+        <ion-button shape="round" (click)="buttonText(8)">8</ion-button>
+        <ion-button shape="round" (click)="buttonText(9)">9</ion-button>
+      </div>
+      <div class="back">
+        <ion-button shape="round" (click)="buttonText('*')">*</ion-button>
+        <ion-button shape="round" (click)="buttonText(0)">0</ion-button>
+        <ion-button shape="round" (click)="buttonText('#')">#</ion-button>
+      </div>
+
+      <div class="back">
+        <ion-button shape="round" (click)="buttonText('*')">
+          <ion-icon aria-hidden="true" name="call-outline"></ion-icon>
+        </ion-button>
+        <ion-button shape="round" (click)="deleteText($event)">
+          <ion-icon aria-hidden="true" name="arrow-undo-circle-outline"></ion-icon></ion-button>
+      </div>
+
+    </ion-card-header>
+  </ion-card>
+
+ 
 </ion-content>

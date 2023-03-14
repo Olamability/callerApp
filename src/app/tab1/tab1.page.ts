@@ -7,6 +7,29 @@ import { Component } from '@angular/core';
 })
 export class Tab1Page {
 
+  screenTest: []= [];
+
   constructor() {}
+
+  buttonText(event:any){
+    console.log('new value', this.screenTest);
+    
+    console.log("testing my keypad", event);
+    this.screenTest += event;
+    
+  }
+  deleteText(event:any){
+    console.log('new value', this.screenTest.pop());
+    this.screenTest = event
+
+  }
+
+  handleRefresh(event: any) {
+    setTimeout(() => {
+      // Any calls to load data go here
+      window.location.reload();
+      // event.target.complete();
+    }, 500);
+  };
 
 }
