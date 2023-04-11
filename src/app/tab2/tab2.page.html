@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,19 +9,74 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Contact Us</ion-title>
+      <ion-title size="medium">Ability Classic Travels</ion-title>
     </ion-toolbar>
   </ion-header>
 
   <ion-card>
-    <img alt="Silhouette of mountains" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+    <img alt="Silhouette of mountains" src="../../assets/img/p2.png" />
     <ion-card-header>
-      <ion-card-title>Bio-Data</ion-card-title>
-      <ion-card-subtitle>Enter your details bellow</ion-card-subtitle>
+      <ion-card-title>Book Your Seat</ion-card-title>
+      <ion-card-subtitle>Please, fill in your details correctly</ion-card-subtitle>
     </ion-card-header>
   
     <ion-card-content>
-      Here's a small text description for the card content. Nothing more, nothing less.
+      <ion-refresher slot="fixed" (ionRefresh)="handleRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+      </ion-refresher>
+
+      <ion-item>
+        <ion-label>Full Name:</ion-label>
+        <ion-input type="text" placeholder="full name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Phone Number:</ion-label>
+        <ion-input type="tel" placeholder="+234 88-8888-8888"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-select placeholder="Select Pick up Address">
+          <ion-select-option value="">----</ion-select-option>
+          <ion-select-option value="{{ability}}" *ngFor="let ability of places">{{ability}}</ion-select-option>
+
+        </ion-select>
+      </ion-item>
+
+
+      <ion-item>
+        <ion-label>Date</ion-label>
+        <ion-input  type="date"  placeholder="Enter text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Next of Kin Name</ion-label>
+        <ion-input  type="text"  placeholder="Enter text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Next of Kin Number</ion-label>
+        <ion-input  type="tel"  placeholder="Enter text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-select placeholder="Select Destination">
+          <ion-select-option value="">----</ion-select-option>
+          <ion-select-option value="{{ability}}" *ngFor="let ability of places">{{ability}}</ion-select-option>
+
+        </ion-select>
+      </ion-item>
+
+          <ion-item>
+        <ion-label position="floating">Floating label</ion-label>
+        <ion-input placeholder="Enter text"></ion-input>
+      </ion-item>
+     
+      <!-- <ion-button shape="block" color="tertiary" (click)="showLoading()" >Click Me</ion-button> -->
+            
+        <ion-button shape="block" color="success" (click)="showLoading()" >Submit</ion-button>
+        
+      
     </ion-card-content>
   </ion-card>
 </ion-content>

@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@1,300&display=swap');
+
+CSS
 ion-card {
     ion-card-header {
 
@@ -7,10 +11,14 @@ ion-card {
         .back {
             display: flex;
             justify-content: space-around;
+            padding: 15px;
             ion-button{
-                font-size: 26px;
+                font-size: 30px;
             }
 
+        }
+        ion-card-title{
+            font-size: 30px;
         }
     }
 }
